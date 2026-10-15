@@ -7,4 +7,4 @@ Site statique de Lokbail (fiche coloc + tirage au sort de 3 cartes cadeaux de 50
 - `mentions-legales.html` : mentions légales
 - `.htaccess` : HTTPS, domaine sans www, adresses courtes `/reglement` et `/mentions-legales`
 
-Déployé sur l'hébergement web OVH de lokbail.fr via « Associer Git » (branche `main`).
+Publié avec GitHub Pages (branche `main`, dossier racine) sur le domaine lokbail.fr (fichier `CNAME`). `404.html` = copie de `index.html` pour que les liens cassés mènent à la fiche. Le `.htaccess` ne sert que si le site est remis sur un hébergement Apache (OVH).
