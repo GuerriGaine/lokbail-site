@@ -1,0 +1,19 @@
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+ErrorDocument 404 /index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # HTTPS + domaine sans www
+  RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://lokbail.fr%{REQUEST_URI} [L,R=301]
+  # Adresses courtes
+  RewriteRule ^reglement/?$ /reglement.html [L]
+  RewriteRule ^mentions-legales/?$ /mentions-legales.html [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lokbail · La fiche des colocs, 3 cartes cadeaux de 50 € à gagner</title>
+<meta name="description" content="Tu es en coloc ? Remplis la fiche de ta coloc en 2 minutes et participe au tirage de 3 cartes cadeaux de 50 € le 15 novembre. Gratuit.">
+<meta property="og:title" content="Tu es en coloc ? 3 cartes cadeaux de 50 € à gagner">
+<meta property="og:description" content="2 minutes sur ta coloc = 1 chance au tirage du 15 novembre. Chaque pote qui remplit = +1 chance. Gratuit.">
+<meta name="theme-color" content="#2F3CFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;900&family=Schibsted+Grotesk:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --citron:#D7FF3F; --cobalt:#2F3CFF; --bonbon:#FF8AD1; --signal:#FF5A1F;
+  --ink:#121216; --paper:#FAFAF5; --line:#DADAD2; --mute:#5E5E66; --field:#FFFFFF; --soft:#F0F0EA;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{--ink:#F2F2EC;--paper:#121216;--line:#2E2E36;--mute:#A6A6AE;--field:#1C1C22;--soft:#1A1A20;color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;padding-top:env(safe-area-inset-top,0px)}
+.wrap{max-width:560px;margin:0 auto;padding-inline:16px;padding-block:18px 56px;display:grid;gap:20px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:900;letter-spacing:-.05em;font-size:20px}
+.door{width:18px;height:22px;background:var(--cobalt);border-radius:9px 9px 2px 2px;position:relative}
+.door:after{content:"";position:absolute;right:4px;top:11px;width:4px;height:4px;border-radius:50%;background:var(--citron)}
+.cd{font-size:13px;font-weight:700;background:var(--ink);color:var(--paper);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.kicker{margin:0;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalt)}
+@media (prefers-color-scheme: dark){.kicker{color:var(--citron)}}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(30px,8.6vw,44px);line-height:1.02;letter-spacing:-.02em;margin:6px 0 0;text-wrap:balance}
+h1 em{font-style:normal;background:var(--citron);color:#121216;padding:0 .12em;border-radius:6px}
+.lead{margin:0;color:var(--mute)}
+.lead b{color:var(--ink)}
+.free{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.free li{border:1.5px solid var(--line);border-radius:999px;padding:5px 11px;font-weight:700;font-size:13px}
+
+.prize{background:var(--cobalt);color:#fff;border-radius:22px;padding:20px 18px;display:grid;gap:14px;position:relative;overflow:hidden}
+.prize:after{content:"";position:absolute;right:-26px;top:-26px;width:120px;height:150px;border-radius:60px 60px 10px 10px;background:rgba(255,255,255,.08)}
+.prize .lab{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.cards{display:flex;gap:8px}
+.gc{flex:1;aspect-ratio:1.55;border-radius:12px;background:var(--citron);color:#121216;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:clamp(20px,6vw,28px);transform:rotate(-2deg)}
+.gc:nth-child(2){transform:rotate(1.5deg);background:var(--bonbon)}
+.gc:nth-child(3){transform:rotate(-1deg)}
+.gc small{display:block;font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin-top:-4px}
+.live{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.12);border-radius:14px;padding:10px 12px}
+.stat b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(26px,8vw,34px);line-height:1;color:var(--citron);font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;opacity:.9}
+.prize .note{font-size:13px;opacity:.9;margin:0;position:relative;z-index:1}
+.mine{background:var(--citron);color:#121216;border-radius:14px;padding:10px 12px;font-weight:700;font-size:14px;position:relative;z-index:1}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.steps .n{width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:15px}
+.steps li:nth-child(2) .n{background:var(--bonbon);color:#121216}
+.steps li:nth-child(3) .n{background:var(--citron);color:#121216}
+.steps p{margin:0;font-size:15px}
+.steps p small{display:block;color:var(--mute);font-size:13px}
+
+
+.formhead{display:grid;gap:4px}
+.formhead h2{font-family:var(--display);font-weight:900;font-size:22px;margin:0;line-height:1.1}
+.formhead p{margin:0;color:var(--mute);font-size:14px}
+form{display:grid;gap:22px}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:12px}
+legend{font-family:var(--display);font-weight:600;font-size:15px;margin-bottom:6px;padding:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:420px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:5px;font-size:14px;font-weight:500;min-width:0}
+label small{font-weight:400;color:var(--mute)}
+input,select{font:inherit;width:100%;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:var(--field);color:var(--ink);min-width:0}
+input:focus,select:focus{outline:none;border-color:var(--cobalt);box-shadow:0 0 0 3px color-mix(in srgb,var(--cobalt) 25%,transparent)}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:13px;color:var(--mute)}
+.check input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--cobalt);padding:0}
+.check a{color:var(--cobalt);font-weight:700}
+@media (prefers-color-scheme: dark){.check a{color:var(--citron)}}
+.hp{position:absolute;left:-9999px}
+.bonus{border:1.5px dashed var(--line);border-radius:14px;padding:12px 14px}
+.bonus summary{cursor:pointer;font-weight:700;list-style:none}
+.bonus summary::-webkit-details-marker{display:none}
+.bonus summary:before{content:"+ ";color:var(--cobalt)}
+.bonus[open] summary:before{content:"– "}
+.bonus summary small{font-weight:400;color:var(--mute)}
+.bonus-body{display:grid;gap:12px;margin-top:12px}
+button{font:inherit}
+.go{background:var(--cobalt);color:#fff;border:0;border-radius:14px;padding:17px;font-family:var(--display);font-weight:600;font-size:17px;cursor:pointer}
+.go:hover{background:var(--ink);color:var(--paper)}
+.go[disabled]{opacity:.6;cursor:wait}
+.err{color:var(--signal);font-weight:500;font-size:14px;min-height:1em;margin:0}
+
+.done{display:grid;gap:14px}
+.done h2{font-family:var(--display);font-weight:900;font-size:28px;margin:0;line-height:1.05}
+.big{background:var(--citron);color:#121216;border-radius:18px;padding:16px;display:grid;gap:4px}
+.big b{font-family:var(--display);font-weight:900;font-size:40px;line-height:1}
+.link{display:flex;gap:8px;flex-wrap:wrap}
+.link input{flex:1 1 220px;font-size:14px}
+.btn{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:12px;padding:12px 14px;font-weight:700;cursor:pointer;text-decoration:none;text-align:center}
+.btn.wa{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.foot{font-size:12px;color:var(--mute);display:grid;gap:6px}
+.foot p{margin:0}
+.foot a{color:inherit;font-weight:700}
+@media (prefers-reduced-motion:no-preference){.stat b{transition:transform .3s}.stat b.bump{transform:scale(1.08)}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top">
+    <div class="brand"><span class="door" aria-hidden="true"></span>lokbail</div>
+    <span class="cd" id="cd">Tirage le 15 nov.</span>
+  </div>
+
+  <header>
+    <p class="kicker">Spécial colocs · gratuit</p>
+    <h1>Tu es en coloc ? Gagne une carte cadeau de <em>50&nbsp;€</em></h1>
+  </header>
+  <p class="lead"><b>3 cartes cadeaux Amazon.fr de 50 €</b> sont tirées au sort le <b>15 novembre</b> parmi les fiches validées. Il te suffit de remplir la fiche de ta coloc : <b>2 minutes</b>, et tu es dans le tirage.</p>
+  <ul class="free" aria-label="Conditions"><li>0 € à payer</li><li>Pas de carte bancaire</li><li>Majeurs, en France</li></ul>
+
+  <section class="prize" aria-live="polite">
+    <span class="lab">À gagner</span>
+    <div class="cards" aria-label="3 cartes cadeaux de 50 euros">
+      <div class="gc"><div>50 €<small>carte cadeau</small></div></div>
+      <div class="gc"><div>50 €<small>carte cadeau</small></div></div>
+      <div class="gc"><div>50 €<small>carte cadeau</small></div></div>
+    </div>
+    <div class="live">
+      <div class="stat"><b id="np">–</b><span>participants</span></div>
+      <div class="stat"><b id="nc">–</b><span>chances en jeu</span></div>
+    </div>
+    <div class="mine" id="mine" hidden></div>
+    <p class="note" id="note">Compteur en direct. Plus tu partages, plus tu as de chances.</p>
+  </section>
+
+  <ol class="steps">
+    <li><span class="n">1</span><p><b>Tu remplis la fiche de ta coloc</b><small>Ta fiche validée = 1 chance au tirage.</small></p></li>
+    <li><span class="n">2</span><p><b>Tu partages ton lien perso</b><small>Chaque pote qui remplit sa fiche avec ton lien = +1 chance pour toi.</small></p></li>
+    <li><span class="n">3</span><p><b>Tirage le 15 novembre</b><small>Les 3 gagnants sont prévenus par email.</small></p></li>
+  </ol>
+
+  <form id="f" novalidate>
+    <div class="formhead"><h2>La fiche de ta coloc</h2><p>2 minutes. On s'en sert pour présenter Lokbail, l'appli des colocs, à ton proprio.</p></div>
+    <fieldset>
+      <legend>Toi</legend>
+      <div class="row">
+        <label for="prenom">Prénom<input id="prenom" name="prenom" autocomplete="given-name" required></label>
+        <label for="nom">Nom<input id="nom" name="nom" autocomplete="family-name" required></label>
+      </div>
+      <div class="row">
+        <label for="email">Email <small>pour te prévenir si tu gagnes</small><input id="email" name="email" type="email" autocomplete="email" required></label>
+        <label for="telephone">Téléphone <small>facultatif</small><input id="telephone" name="telephone" type="tel" inputmode="tel" autocomplete="tel"></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Ta coloc</legend>
+      <label for="adresse">Adresse <small>numéro, rue, code postal, ville</small>
+        <input id="adresse" name="adresse" list="adr-list" autocomplete="off" placeholder="12 rue Oberkampf 75011 Paris" required>
+        <datalist id="adr-list"></datalist>
+      </label>
+      <div class="row">
+        <label for="loyer_chambre">Loyer de ta chambre <small>€ charges comprises</small><input id="loyer_chambre" name="loyer_chambre" type="number" inputmode="numeric" min="100" max="3000" required></label>
+        <label for="chambres_vides">Chambres vides en ce moment<input id="chambres_vides" name="chambres_vides" type="number" inputmode="numeric" min="0" max="10" value="0" required></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Ton proprio</legend>
+      <div class="row">
+        <label for="proprio_prenom">Prénom<input id="proprio_prenom" name="proprio_prenom"></label>
+        <label for="proprio_nom">Nom <small>ou société</small><input id="proprio_nom" name="proprio_nom" required></label>
+      </div>
+      <div class="row">
+        <label for="proprio_tel">Téléphone<input id="proprio_tel" name="proprio_tel" type="tel" inputmode="tel"></label>
+        <label for="proprio_email">ou email<input id="proprio_email" name="proprio_email" type="email"></label>
+      </div>
+    </fieldset>
+
+    <details class="bonus">
+      <summary>Tu en sais plus ? <small>facultatif, 20 secondes</small></summary>
+      <div class="bonus-body">
+        <div class="row">
+          <label for="loyer_total">Loyer total du logement <small>€</small><input id="loyer_total" name="loyer_total" type="number" inputmode="numeric"></label>
+          <label for="agence">Agence ou gestionnaire <small>si ce n'est pas le proprio</small><input id="agence" name="agence"></label>
+        </div>
+        <div class="row">
+          <label for="proprio_civilite">Ton proprio, c'est<select id="proprio_civilite" name="proprio_civilite"><option value="">–</option><option>M.</option><option>Mme</option><option>Une société (SCI…)</option></select></label>
+          <label for="proprio_nb_biens">Il loue combien de biens ?<select id="proprio_nb_biens" name="proprio_nb_biens"><option value="">Je ne sais pas</option><option>1</option><option>2 à 3</option><option>4 à 10</option><option>Plus de 10</option></select></label>
+        </div>
+        <div class="row">
+          <label for="proprio_outil">Il gère la coloc comment ?<select id="proprio_outil" name="proprio_outil"><option value="">Je ne sais pas</option><option>Papier et virements</option><option>Excel</option><option>Une appli</option></select></label>
+          <label for="source">Tu as trouvé ta coloc où ?<select id="source" name="source"><option value="">–</option><option>Leboncoin</option><option>La Carte des Colocs</option><option>Appartager</option><option>Studapart</option><option>Agence</option><option>Bouche-à-oreille</option><option>Autre</option></select></label>
+        </div>
+      </div>
+    </details>
+
+    <label class="check" for="consentement"><input type="checkbox" id="consentement" name="consentement" required>
+      <span>J'accepte que Lokbail utilise ces infos pour proposer ses services à mon proprio et me recontacter. Mon proprio saura d'où viennent ses coordonnées et pourra demander leur suppression.</span></label>
+    <label class="check" for="reglement"><input type="checkbox" id="reglement" name="reglement" required>
+      <span>J'ai 18 ans ou plus et j'accepte le <a href="/reglement.html" target="_blank">règlement du tirage au sort</a>.</span></label>
+    <input class="hp" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <p class="err" id="err" role="alert"></p>
+    <button class="go" id="go" type="submit">Envoyer ma fiche et participer</button>
+  </form>
+
+  <section class="done" id="done" hidden>
+    <h2>Merci <span id="done-name"></span> !</h2>
+    <div class="big"><b id="done-ch">1 chance</b><span id="done-status"></span></div>
+    <p class="lead"><b>Chaque pote qui remplit sa fiche avec ton lien = +1 chance pour toi.</b> Envoie-le à tes colocs et à tes potes en coloc.</p>
+    <div class="link"><input id="ref-link" readonly aria-label="Ton lien perso"><button class="btn" id="copy" type="button">Copier</button></div>
+    <a class="btn wa" id="wa" target="_blank" rel="noopener">Partager sur WhatsApp</a>
+    <button class="btn" id="again" type="button">Remplir pour une autre coloc</button>
+  </section>
+
+  <footer class="foot">
+    <p><a href="/reglement.html">Règlement du tirage au sort</a> · Jeu gratuit sans obligation d'achat, réservé aux majeurs résidant en France, du 15 octobre au 14 novembre 2026.</p>
+    <p>Ce jeu n'est ni organisé ni parrainé par Amazon, Facebook, Instagram ou Meta. Amazon.fr est une marque d'Amazon. <a href="/mentions-legales.html">Mentions légales</a>.</p>
+    <p>Lokbail, l'appli qui simplifie la vie des colocs et de leurs proprios. Données hébergées en Europe (Supabase, Paris). Suppression de tes données : <span class="contact">contact@lokbail.fr</span>.</p>
+  </footer>
+</main>
+
+<script>
+/* ==== CONFIG ==== */
+const CONFIG = {
+  api: "https://kqrjmqezoeozvvhfbssu.supabase.co/functions/v1/formulaire",
+  contact: "contact@lokbail.fr",
+  tirage: "2026-11-15T12:00:00+01:00",
+  fin: "2026-11-14T23:59:59+01:00"
+};
+/* ================ */
+const $ = id => document.getElementById(id);
+document.querySelectorAll(".contact").forEach(e => e.textContent = CONFIG.contact);
+const ref = new URLSearchParams(location.search).get("ref") || "";
+const nb = n => (Number(n)||0).toLocaleString("fr-FR");
+const plural = (n, w) => nb(n) + " " + w + (Number(n) > 1 ? "s" : "");
+const store = { get(k){ try{ return localStorage.getItem(k); }catch{ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch{} } };
+
+// Compte à rebours
+(function(){
+  const now = Date.now(), fin = Date.parse(CONFIG.fin), tir = Date.parse(CONFIG.tirage);
+  const j = Math.ceil((fin - now) / 864e5);
+  $("cd").textContent = now > tir ? "Tirage effectué" : now > fin ? "Tirage le 15 nov." : j <= 1 ? "Dernier jour !" : "J-" + j + " · tirage le 15 nov.";
+  if (now > fin){ $("go").textContent = "Envoyer ma fiche"; }
+})();
+
+// Compteurs en direct
+const last = {};
+function setNum(id, v){
+  const el = $(id), t = nb(v);
+  if (last[id] !== undefined && last[id] !== t){ el.classList.add("bump"); setTimeout(()=>el.classList.remove("bump"),350); }
+  el.textContent = t; last[id] = t;
+}
+function paint(c){
+  if (!c) return;
+  if (c.concours){
+    setNum("np", c.concours.participants); setNum("nc", c.concours.chances);
+    const p = c.concours.participants;
+    $("note").textContent = p === 0 ? "Compteur en direct. Personne n'est encore dans le tirage : sois le premier !"
+      : p < 30 ? "Compteur en direct. Seulement " + plural(p, "participant") + " pour 3 cartes : c'est le moment, tes chances sont énormes."
+      : "Compteur en direct. Plus tu partages, plus tu as de chances.";
+  }
+}
+async function live(){ try{ const r = await fetch(CONFIG.api); if (r.ok) paint(await r.json()); }catch{} }
+live(); setInterval(()=>{ if (!document.hidden) live(); }, 30000);
+
+// Si tu as déjà participé sur ce téléphone : tes chances
+function shareLink(code){ return location.origin + "/?ref=" + encodeURIComponent(code); }
+async function myChances(){
+  const code = store.get("lokbail_code"); if (!code) return;
+  try{
+    const r = await fetch(CONFIG.api + "?code=" + encodeURIComponent(code)); const j = await r.json();
+    const m = $("mine"); m.hidden = false;
+    m.textContent = j.chances > 0 ? "Tu as " + plural(j.chances, "chance") + " au tirage. Ton lien : " + shareLink(code).replace(/^https?:\/\//,"")
+                                  : "Ta fiche est en cours de vérification. Ton lien : " + shareLink(code).replace(/^https?:\/\//,"");
+  }catch{}
+}
+myChances();
+
+// Autocomplétion d'adresse (Base Adresse Nationale, IGN)
+let t; $("adresse").addEventListener("input", e=>{
+  clearTimeout(t); const q = e.target.value.trim(); if (q.length < 5) return;
+  t = setTimeout(async ()=>{
+    try{
+      const r = await fetch("https://data.geopf.fr/geocodage/search?autocomplete=1&limit=5&index=address&q="+encodeURIComponent(q));
+      const j = await r.json();
+      $("adr-list").innerHTML = (j.features||[]).map(f=>`<option value="${f.properties.label.replace(/"/g,"&quot;")}">`).join("");
+    }catch{}
+  }, 250);
+});
+
+$("f").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const f = e.target, d = Object.fromEntries(new FormData(f));
+  const err = m => { $("err").textContent = m; };
+  if (!d.prenom || !d.nom || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(d.email||"")) return err("Ton prénom, ton nom et un email valide, s'il te plaît.");
+  if (!d.adresse) return err("Il manque l'adresse de ta coloc.");
+  if (!d.loyer_chambre) return err("Indique le loyer de ta chambre.");
+  if (!d.proprio_nom || (!d.proprio_tel && !d.proprio_email)) return err("Il faut le nom de ton proprio et son téléphone ou son email.");
+  if (!$("consentement").checked) return err("Coche la case de consentement pour envoyer.");
+  if (!$("reglement").checked) return err("Coche la case du règlement pour participer au tirage.");
+  err(""); $("go").disabled = true; const label = $("go").textContent; $("go").textContent = "Envoi…";
+  try{
+    const r = await fetch(CONFIG.api,{method:"POST",headers:{"content-type":"application/json"},
+      body: JSON.stringify({...d, consentement:true, reglement:true, ref})});
+    const j = await r.json();
+    if (!r.ok || !j.ok) throw new Error(j.error || "Envoi impossible, réessaie dans un instant.");
+    paint(j);
+    $("done-name").textContent = d.prenom;
+    if (j.statut === "validee" || j.chances > 0){
+      $("done-ch").textContent = plural(Math.max(1, j.chances), "chance");
+      $("done-status").textContent = "C'est validé : tu es dans le tirage du 15 novembre.";
+    } else if (j.statut === "doublon"){
+      $("done-ch").textContent = "Déjà comptée";
+      $("done-status").textContent = "Cette coloc et ce proprio sont déjà dans la base. Partage ton lien pour gagner des chances.";
+    } else {
+      $("done-ch").textContent = "En vérification";
+      $("done-status").textContent = "On vérifie ta fiche sous 24 h. Dès qu'elle est validée, tu as 1 chance au tirage.";
+    }
+    if (j.code){
+      store.set("lokbail_code", j.code);
+      const link = shareLink(j.code);
+      $("ref-link").value = link;
+      $("wa").href = "https://wa.me/?text=" + encodeURIComponent("T'es en coloc ? Remplis la fiche de ta coloc (2 min) : 3 cartes cadeaux de 50 € sont tirées au sort le 15 novembre. C'est gratuit.\n\n" + link);
+    }
+    f.hidden = true; $("done").hidden = false; $("done").scrollIntoView({behavior:"smooth"});
+  }catch(x){ err(x.message); }
+  finally{ $("go").disabled = false; $("go").textContent = label; }
+});
+$("copy").addEventListener("click", async ()=>{
+  const i = $("ref-link");
+  try{ await navigator.clipboard.writeText(i.value); $("copy").textContent = "Copié"; }
+  catch{ i.select(); }
+});
+$("again").addEventListener("click", ()=>{
+  const f = $("f"); ["adresse","loyer_chambre","loyer_total","agence","proprio_prenom","proprio_nom","proprio_tel","proprio_email","proprio_civilite","proprio_nb_biens","proprio_outil","source"].forEach(id=>$(id).value="");
+  f.hidden = false; $("done").hidden = true; $("adresse").focus();
+});
+</script>
+</body>
+</html>
